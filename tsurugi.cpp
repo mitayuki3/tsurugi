@@ -1,6 +1,7 @@
 #include <QApplication>
 #include <QPixmap>
 #include <QGraphicsView>
+#include <QScroller>
 
 int main(int argc, char *argv[])
 {
@@ -11,5 +12,6 @@ int main(int argc, char *argv[])
     scene.addPixmap(QPixmap(fileName));
     QGraphicsView view(&scene);
     view.show();
+    QScroller::grabGesture(&view, QScroller::LeftMouseButtonGesture);
     return a.exec();
 }
